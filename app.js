@@ -1,4 +1,5 @@
-// Always start at top — prevents iOS refresh jumping to hash anchor
+// Prevent iOS refresh jumping to hash anchor — must run before DOM is ready
+if (location.hash) history.replaceState(null, '', location.pathname);
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.addEventListener('load', () => window.scrollTo(0, 0));
 
@@ -12,10 +13,18 @@ document.addEventListener('click', e => {
   target.scrollIntoView({ behavior: 'smooth' });
 });
 
+// ─── CART ───────────────────────────────────────────────────
 const cart = [];
 const SHIP_MIN = 50;
 
+function sanitize(str) {
+  const div = document.createElement('div');
+  div.textContent = String(str);
+  return div.innerHTML;
+}
+
 function addToCart(name, price) {
+  if (typeof price !== 'number' || price < 0 || !name) return;
   const existing = cart.find(i => i.name === name);
   existing ? existing.qty++ : cart.push({ name, price, qty: 1 });
   renderCart();
@@ -23,6 +32,7 @@ function addToCart(name, price) {
 }
 
 function removeFromCart(i) {
+  if (i < 0 || i >= cart.length) return;
   cart.splice(i, 1);
   renderCart();
 }
@@ -35,11 +45,11 @@ function renderCart() {
   countEl.textContent = count;
   countEl.classList.toggle('visible', count > 0);
 
-  const body   = document.getElementById('cartBody');
-  const foot   = document.getElementById('cartFoot');
-  const totalEl= document.getElementById('cartTotal');
-  const label  = document.getElementById('shipLabel');
-  const fill   = document.getElementById('shipFill');
+  const body    = document.getElementById('cartBody');
+  const foot    = document.getElementById('cartFoot');
+  const totalEl = document.getElementById('cartTotal');
+  const label   = document.getElementById('shipLabel');
+  const fill    = document.getElementById('shipFill');
 
   if (!cart.length) {
     body.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
@@ -49,9 +59,9 @@ function renderCart() {
 
   body.innerHTML = cart.map((item, idx) => `
     <div class="cart-line">
-      <div class="cart-line-name">${item.name}${item.qty > 1 ? ` ×${item.qty}` : ''}</div>
+      <div class="cart-line-name">${sanitize(item.name)}${item.qty > 1 ? ` <span style="color:#aaa">×${item.qty}</span>` : ''}</div>
       <div class="cart-line-price">$${(item.price * item.qty).toFixed(2)}</div>
-      <button class="cart-line-remove" onclick="removeFromCart(${idx})">×</button>
+      <button class="cart-line-remove" onclick="removeFromCart(${idx})" aria-label="Remove item">×</button>
     </div>
   `).join('');
 
@@ -61,7 +71,9 @@ function renderCart() {
   const pct = Math.min((total / SHIP_MIN) * 100, 100);
   fill.style.width = pct + '%';
   const rem = SHIP_MIN - total;
-  label.textContent = rem > 0 ? `Add $${rem.toFixed(2)} for free shipping` : '✓ You qualify for free shipping!';
+  label.textContent = rem > 0
+    ? `Add $${rem.toFixed(2)} for free shipping`
+    : '✓ Free shipping applied!';
   label.style.color = rem <= 0 ? '#16a34a' : '';
 }
 
@@ -79,6 +91,11 @@ function closeCart() {
 
 function toggleCart() {
   document.getElementById('cartDrawer').classList.contains('open') ? closeCart() : openCart();
+}
+
+function handleCheckout() {
+  if (!cart.length) return;
+  window.location.href = 'https://advancedresettech.com/cart/';
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });

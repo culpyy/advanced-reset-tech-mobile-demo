@@ -109,7 +109,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: #aaa;
+  color: var(--white);
 }
 .cart-count {
   background: var(--orange);
@@ -325,7 +325,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .product-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 12px;
 }
 
 .product-card {
@@ -393,11 +393,13 @@ button { font-family: inherit; cursor: pointer; border: none; }
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 11px;
+  padding: 12px;
   border-radius: 3px;
   width: 100%;
   transition: background .15s;
+  min-height: 44px;
 }
+.btn-add:hover { background: #222; }
 .btn-add:active { background: var(--orange); }
 
 /* ─── FEATURE BAND ─────────────────────────────────────────── */
@@ -457,7 +459,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   grid-template-columns: 1fr 1fr;
   gap: 32px 20px;
 }
-.promise-item {}
 .promise-icon { font-size: 24px; margin-bottom: 10px; }
 .promise-item h4 { font-size: 13px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.1px; }
 .promise-item p { font-size: 12px; color: var(--muted); line-height: 1.55; }
@@ -596,7 +597,14 @@ button { font-family: inherit; cursor: pointer; border: none; }
   border-radius: 4px;
   transition: background .15s;
 }
-.btn-checkout:hover { background: var(--orange); }
+.btn-checkout:hover { background: #222; }
+.btn-checkout:active { background: var(--orange); }
+
+/* ─── FOCUS STATES ────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
 
 /* ─── RESPONSIVE ───────────────────────────────────────────── */
 @media (min-width: 640px) {
