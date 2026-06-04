@@ -175,26 +175,27 @@ button { font-family: inherit; cursor: pointer; border: none; }
   text-transform: uppercase;
   padding: 14px 28px;
   border-radius: 4px;
-  transition: opacity .15s;
+  border: 1px solid var(--white);
+  transition: background .15s, color .15s;
   display: inline-flex;
   align-items: center;
 }
-.btn-white:active { opacity: 0.85; }
+.btn-white:active { background: #e5e5e5; }
 .btn-ghost {
   background: transparent;
-  color: #888;
+  color: var(--white);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 14px 28px;
   border-radius: 4px;
-  border: 1px solid #333;
-  transition: border-color .15s, color .15s;
+  border: 1px solid var(--white);
+  transition: background .15s;
   display: inline-flex;
   align-items: center;
 }
-.btn-ghost:active { border-color: #555; color: var(--white); }
+.btn-ghost:active { background: rgba(255,255,255,0.1); }
 
 /* watermark */
 .hero::after {
@@ -203,7 +204,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
   right: -10px; bottom: -20px;
   font-size: clamp(120px, 35vw, 260px);
   font-weight: 900;
-  color: rgba(255,255,255,0.025);
+  color: rgba(255,255,255,0.05);
   letter-spacing: -5px;
   line-height: 1;
   pointer-events: none;
@@ -386,10 +387,27 @@ button { font-family: inherit; cursor: pointer; border: none; }
   background: var(--black);
   color: var(--white);
   padding: 64px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.feature-band::after {
+  content: 'A.R.T.';
+  position: absolute;
+  right: -8px; top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(60px, 18vw, 140px);
+  font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: 4px;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
 }
 .feature-band-inner {
   max-width: 1140px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .feature-band h2 {
   font-size: clamp(28px, 6vw, 48px);
