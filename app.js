@@ -13,20 +13,6 @@ document.addEventListener('click', e => {
   target.scrollIntoView({ behavior: 'smooth' });
 });
 
-// ─── PRODUCT CARD CLICKS ────────────────────────────────────
-document.addEventListener('click', e => {
-  const card = e.target.closest('.product-card[data-url]');
-  if (!card) return;
-  if (e.target.closest('.btn-add')) return;
-  const a = Object.assign(document.createElement('a'), {
-    href: card.dataset.url,
-    target: '_blank',
-    rel: 'noopener noreferrer'
-  });
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-});
 
 // ─── CART ───────────────────────────────────────────────────
 const cart = [];

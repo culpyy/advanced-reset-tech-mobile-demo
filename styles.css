@@ -156,8 +156,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   cursor: pointer;
   text-decoration: none;
 }
-.hero-image:hover img { transform: scale(1.02); }
-.hero-image img { transition: transform .3s; }
 .hero-image img {
   width: 100%;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.7));
