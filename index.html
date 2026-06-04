@@ -22,9 +22,10 @@
       <nav class="nav-desktop">
         <a href="#glock">Glock</a>
         <a href="#ruger">10/22</a>
+        <a href="#mp5">MP5-22</a>
         <a href="#muzzle">Muzzle</a>
         <a href="#accessories">Accessories</a>
-        <a href="https://advancedresettech.com/shop-all/" target="_blank" class="nav-store">Shop All</a>
+        <a href="./shop.html" class="nav-store">Shop All</a>
       </nav>
       <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
@@ -76,28 +77,42 @@
           <div class="cat-overlay"></div>
           <div class="cat-body">
             <span class="cat-name">Glock</span>
-            <span class="cat-link">Gen 3, 4 &amp; 5 →</span>
+            <span class="cat-link">Gen 3, 4, 5 &amp; 6/V →</span>
           </div>
         </a>
-        <a href="#ruger" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1')">
+        <a href="#ruger" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/144/506/8C3BBDD1-0CFF-4F38-B38B-34BCB38A2FFE__69717.1769385709.jpg?c=1')">
           <div class="cat-overlay"></div>
           <div class="cat-body">
-            <span class="cat-name">10/22 & MP5-22</span>
-            <span class="cat-link">Reset Kits →</span>
+            <span class="cat-name">Ruger 10/22</span>
+            <span class="cat-link">Reset &amp; Upgrade Kits →</span>
+          </div>
+        </a>
+        <a href="#mp5" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1')">
+          <div class="cat-overlay"></div>
+          <div class="cat-body">
+            <span class="cat-name">MP5-22</span>
+            <span class="cat-link">HK/Umarex .22LR →</span>
           </div>
         </a>
         <a href="#muzzle" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/157/535/4E401AA5-04BA-4234-913A-407C84930AAE__58850.1773128990.png?c=1')">
           <div class="cat-overlay"></div>
           <div class="cat-body">
             <span class="cat-name">Muzzle Devices</span>
-            <span class="cat-link">1/2"×28 →</span>
+            <span class="cat-link">1/2"×28 Thread →</span>
           </div>
         </a>
         <a href="#accessories" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1')">
           <div class="cat-overlay"></div>
           <div class="cat-body">
             <span class="cat-name">Accessories</span>
-            <span class="cat-link">Handles &amp; More →</span>
+            <span class="cat-link">Handles, Grips &amp; More →</span>
+          </div>
+        </a>
+        <a href="./shop.html" class="cat-card" style="background:#111;">
+          <div class="cat-overlay" style="background:linear-gradient(135deg,rgba(217,95,0,0.25),rgba(0,0,0,0.8))"></div>
+          <div class="cat-body">
+            <span class="cat-name">Shop All</span>
+            <span class="cat-link">Browse Every Product →</span>
           </div>
         </a>
       </div>
@@ -111,33 +126,33 @@
       <h2 class="section-title">Engineered for Every Generation</h2>
       <div class="product-grid">
 
-        <div class="product-card" data-url="https://advancedresettech.com/a-r-t-trigger-kit-for-gen-5-glock-handguns/">
+        <div class="product-card" onclick="location.href='product.html?id=gen5-glock'" style="cursor:pointer">
           <div class="product-img">
+            <span class="badge badge-hot">Best Seller</span>
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1" alt="Gen 5 Trigger Kit" loading="lazy"/>
           </div>
           <div class="product-body">
-            <span class="product-tag">Best Seller</span>
             <p class="product-name">A.R.T. Trigger Kit — Gen 5 Glock</p>
             <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
             <div class="product-price">$274.99</div>
-            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/a-r-t-trigger-kit-for-gen-4-glock-handguns/">
+        <div class="product-card" onclick="location.href='product.html?id=gen4-glock'" style="cursor:pointer">
           <div class="product-img">
+            <span class="badge badge-hot">Best Seller</span>
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/116/418/Glock_ART_advanced_reset_tech_GEN_4_trigger_kit_Glock_FRT_Glock_ART__83170.1764272764.jpg?c=1" alt="Gen 4 Trigger Kit" loading="lazy"/>
           </div>
           <div class="product-body">
-            <span class="product-tag">Best Seller</span>
             <p class="product-name">A.R.T. Trigger Kit — Gen 4 Glock</p>
             <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
             <div class="product-price">$249.99</div>
-            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/a-r-t-gen-3-trigger-kit-for-glock-handguns/">
+        <div class="product-card" onclick="location.href='product.html?id=gen3-glock'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/115/380/combatmaster_flatface__64607.1764226241.jpg?c=1" alt="Gen 3 Trigger Kit" loading="lazy"/>
           </div>
@@ -145,11 +160,11 @@
             <p class="product-name">A.R.T. Trigger Kit — Gen 3 Glock</p>
             <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
             <div class="product-price">$264.99</div>
-            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 3', 264.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('A.R.T. Trigger Kit — Gen 3', 264.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/glock/">
+        <div class="product-card" onclick="location.href='product.html?id=gen6-glock'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/139/467/IMG_8220__66544.1767695046.jpg?c=1" alt="Gen 6/V Trigger Kit" loading="lazy"/>
           </div>
@@ -157,7 +172,7 @@
             <p class="product-name">A.R.T. Trigger Kit — Gen 6/V Glock</p>
             <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
             <div class="product-price">$274.99</div>
-            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 6/V', 274.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('A.R.T. Trigger Kit — Gen 6/V', 274.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -178,22 +193,10 @@
     <div class="container">
       <p class="section-label">Ruger 10/22</p>
       <h2 class="section-title">Upgrade Your 10/22. Own the Reset.</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:28px;max-width:560px">The Ruger 10/22 is one of the most popular semi-automatic rimfire rifles in the US. A.R.T. makes drop-in parts that upgrade reset, bolt release, and barrel fitment without permanent modification.</p>
       <div class="product-grid">
 
-        <div class="product-card" data-url="https://advancedresettech.com/mp5-22-a-r-t-lever-with-adjustable-buffer-system/">
-          <div class="product-img">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="MP5-22 ART Lever" loading="lazy"/>
-          </div>
-          <div class="product-body">
-            <span class="product-tag">Best Seller</span>
-            <p class="product-name">MP5-22 A.R.T. Lever + Adjustable Buffer</p>
-            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
-            <div class="product-price">$179.99</div>
-            <button class="btn-add" onclick="addToCart('MP5-22 ART Lever + Buffer', 179.99)">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card" data-url="https://advancedresettech.com/a-r-t-auto-release-bolt-catch-for-ruger-10-22/">
+        <div class="product-card" onclick="location.href='product.html?id=bolt-catch'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/144/506/8C3BBDD1-0CFF-4F38-B38B-34BCB38A2FFE__69717.1769385709.jpg?c=1" alt="Auto-Release Bolt Catch" loading="lazy"/>
           </div>
@@ -201,11 +204,11 @@
             <p class="product-name">A.R.T. Auto-Release Bolt Catch — 10/22</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$14.99</div>
-            <button class="btn-add" onclick="addToCart('Auto-Release Bolt Catch', 14.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Auto-Release Bolt Catch', 14.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/10-22-slip-on-thread-adapter-1-2-28/">
+        <div class="product-card" onclick="location.href='product.html?id=thread-adapter'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/145/507/0F13E74F-69FF-4650-9B20-8EC700279C71__61212.1769500091.png?c=1" alt="Thread Adapter" loading="lazy"/>
           </div>
@@ -213,11 +216,11 @@
             <p class="product-name">10/22 Slip-On Thread Adapter — 1/2×28</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$29.99</div>
-            <button class="btn-add" onclick="addToCart('10/22 Slip-On Thread Adapter', 29.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('10/22 Slip-On Thread Adapter', 29.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/10-22-barrel-mount-v-block-with-install-hard/">
+        <div class="product-card" onclick="location.href='product.html?id=v-block'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/156/534/9345B08C-8B48-4944-8D63-C28AF52A89C6__70087.1773128511.png?c=1" alt="V-Block" loading="lazy"/>
           </div>
@@ -225,7 +228,32 @@
             <p class="product-name">10/22 Barrel Mount V-Block</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$34.99</div>
-            <button class="btn-add" onclick="addToCart('10/22 Barrel Mount V-Block', 34.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('10/22 Barrel Mount V-Block', 34.99)">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MP5-22 -->
+  <section class="products" id="mp5">
+    <div class="container">
+      <p class="section-label">MP5-22 Platform</p>
+      <h2 class="section-title">Built for the HK/Umarex MP5 .22LR</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:28px;max-width:560px">The MP5-22 is a .22LR semi-automatic carbine built on the HK MP5 design by Umarex. A.R.T.&#39;s lever system drops directly into the factory trigger pack — no modifications, no proprietary housing.</p>
+      <div class="product-grid">
+
+        <div class="product-card" onclick="location.href='product.html?id=mp5-lever'" style="cursor:pointer">
+          <div class="product-img">
+            <span class="badge badge-hot">Best Seller</span>
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="MP5-22 ART Lever" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-name">MP5-22 A.R.T. Lever + Adjustable Buffer</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>2–4 Week Lead Time</div>
+            <div class="product-price">$179.99</div>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('MP5-22 ART Lever + Buffer', 179.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -234,26 +262,26 @@
   </section>
 
   <!-- MUZZLE -->
-  <section class="products" id="muzzle">
+  <section class="products products-alt" id="muzzle">
     <div class="container">
       <p class="section-label">Muzzle Devices</p>
       <h2 class="section-title">Thread On. Ship Fast.</h2>
       <div class="product-grid">
 
-        <div class="product-card" data-url="https://advancedresettech.com/flashbang-brake-1-2-x28/">
+        <div class="product-card" onclick="location.href='product.html?id=flashbang'" style="cursor:pointer">
           <div class="product-img">
+            <span class="badge badge-hot">New</span>
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/157/535/4E401AA5-04BA-4234-913A-407C84930AAE__58850.1773128990.png?c=1" alt="Flashbang Brake" loading="lazy"/>
           </div>
           <div class="product-body">
-            <span class="product-tag">New</span>
             <p class="product-name">Flashbang Brake — 1/2"×28</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$44.99</div>
-            <button class="btn-add" onclick="addToCart('Flashbang Brake', 44.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Flashbang Brake', 44.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/aluminum-blast-diverter-1-2-x28/">
+        <div class="product-card" onclick="location.href='product.html?id=blast-diverter'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/155/530/09192AEC-2BC4-4AB8-8161-26FEE466E2B1__04127.1773128248.png?c=1" alt="Blast Diverter" loading="lazy"/>
           </div>
@@ -261,11 +289,11 @@
             <p class="product-name">Aluminum Blast Diverter — 1/2"×28</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$39.99</div>
-            <button class="btn-add" onclick="addToCart('Aluminum Blast Diverter', 39.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Aluminum Blast Diverter', 39.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/thread-on-golf-ball-launcher-blast-diverter-1-2-x28-tlbb/">
+        <div class="product-card" onclick="location.href='product.html?id=golf-ball'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/147/514/DE7662CD-79E7-42A4-9511-99FFC62E6AB8__47189.1768282477.1280.1280__82121.1771113022.png?c=1" alt="Golf Ball Launcher" loading="lazy"/>
           </div>
@@ -273,11 +301,11 @@
             <p class="product-name">Thread-On Golf Ball Launcher — 1/2"×28</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$39.99</div>
-            <button class="btn-add" onclick="addToCart('Golf Ball Launcher', 39.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Golf Ball Launcher', 39.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/shop-all/">
+        <div class="product-card" onclick="location.href='product.html?id=mega-thumper'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/137/462/RenderedImage__56052.1767583304.jpg?c=1" alt="Mega Thumper" loading="lazy"/>
           </div>
@@ -285,7 +313,7 @@
             <p class="product-name">9-Port Mega Thumper Muzzle Brake</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$49.99</div>
-            <button class="btn-add" onclick="addToCart('9-Port Mega Thumper', 49.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('9-Port Mega Thumper', 49.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -300,7 +328,7 @@
       <h2 class="section-title">Finish the Build Right.</h2>
       <div class="product-grid">
 
-        <div class="product-card" data-url="https://advancedresettech.com/extended-knurled-charging-handle-for-pc-carbine-charger/">
+        <div class="product-card" onclick="location.href='product.html?id=charging-handle'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1" alt="Charging Handle" loading="lazy"/>
           </div>
@@ -308,11 +336,11 @@
             <p class="product-name">Extended Knurled Charging Handle</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$24.99</div>
-            <button class="btn-add" onclick="addToCart('Extended Knurled Charging Handle', 24.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Extended Knurled Charging Handle', 24.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/ergonomic-m-lok-hand-stop-with-install-hardware/">
+        <div class="product-card" onclick="location.href='product.html?id=hand-stop'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/153/525/6175F262-4E4C-415A-AA3C-93F73C417F70__17828.1773127106.png?c=1" alt="M-LOK Hand Stop" loading="lazy"/>
           </div>
@@ -320,11 +348,11 @@
             <p class="product-name">Ergonomic M-LOK Hand Stop</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$19.99</div>
-            <button class="btn-add" onclick="addToCart('Ergonomic M-LOK Hand Stop', 19.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('Ergonomic M-LOK Hand Stop', 19.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/m-lok-angled-grip-index-with-install-h/">
+        <div class="product-card" onclick="location.href='product.html?id=angled-grip'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/152/522/805419A3-3B34-427D-8E44-A2B52CCAA5C2__32737.1773123050.png?c=1" alt="Angled Grip" loading="lazy"/>
           </div>
@@ -332,11 +360,11 @@
             <p class="product-name">M-LOK Angled Grip Index</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$22.99</div>
-            <button class="btn-add" onclick="addToCart('M-LOK Angled Grip Index', 22.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('M-LOK Angled Grip Index', 22.99)">Add to Cart</button>
           </div>
         </div>
 
-        <div class="product-card" data-url="https://advancedresettech.com/m-lok-aluminum-8-slot-picatinny-mount/">
+        <div class="product-card" onclick="location.href='product.html?id=picatinny-mount'" style="cursor:pointer">
           <div class="product-img">
             <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/151/519/CC0A6435-EAF8-4479-9BC1-383189B8F6D4__94484.1773121880.jpg?c=1" alt="Picatinny Mount" loading="lazy"/>
           </div>
@@ -344,7 +372,7 @@
             <p class="product-name">M-LOK 8-Slot Picatinny Mount</p>
             <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
             <div class="product-price">$27.99</div>
-            <button class="btn-add" onclick="addToCart('M-LOK 8-Slot Picatinny Mount', 27.99)">Add to Cart</button>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('M-LOK 8-Slot Picatinny Mount', 27.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -464,6 +492,7 @@
     </div>
   </aside>
 
+  <script src="products.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

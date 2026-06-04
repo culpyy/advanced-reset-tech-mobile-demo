@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop All — Advanced Reset Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .shop-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 48px 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .shop-hero h1 { font-size: clamp(28px,6vw,42px); font-weight:900; letter-spacing:-1px; margin-bottom:6px; }
+    .shop-hero p  { font-size:14px; color:#666; }
+
+    .shop-filters {
+      background: var(--white);
+      border-bottom: 1px solid var(--subtle);
+      padding: 0 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .shop-filters::-webkit-scrollbar { display:none; }
+    .filter-row {
+      display: flex;
+      gap: 4px;
+      padding: 12px 0;
+      white-space: nowrap;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .filter-btn {
+      background: none;
+      border: 1.5px solid var(--subtle);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover   { border-color: var(--text); color: var(--text); }
+    .filter-btn.active  { background: var(--black); color: var(--white); border-color: var(--black); }
+
+    .shop-body { padding: 40px 0 80px; background: var(--off); }
+    .shop-count { font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 20px; letter-spacing: 0.3px; }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (min-width: 580px)  { .shop-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px)  { .shop-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .product-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="announce">Ships Free on Orders Over $50 — No Hidden Fees. Ever.</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-art">A.R.T.</span>
+        <span class="logo-sub">Advanced Reset Tech</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="./index.html#glock">Glock</a>
+        <a href="./index.html#ruger">10/22</a>
+        <a href="./index.html#mp5">MP5-22</a>
+        <a href="./index.html#muzzle">Muzzle</a>
+        <a href="./index.html#accessories">Accessories</a>
+        <a href="./shop.html" class="nav-store">Shop All</a>
+      </nav>
+      <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-btn-text">Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="shop-hero">
+    <div class="container">
+      <p class="section-label">Browse</p>
+      <h1>All Products</h1>
+      <p>Every A.R.T. part — trigger kits, muzzle devices, and accessories.</p>
+    </div>
+  </div>
+
+  <div class="shop-filters">
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="glock">Glock Kits</button>
+      <button class="filter-btn" data-filter="ruger">Ruger 10/22</button>
+      <button class="filter-btn" data-filter="mp5">MP5-22</button>
+      <button class="filter-btn" data-filter="muzzle">Muzzle Devices</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+    </div>
+  </div>
+
+  <section class="shop-body">
+    <div class="container">
+      <p class="shop-count" id="shopCount"></p>
+      <div class="shop-grid" id="shopGrid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">A.R.T.</span>
+          <p>Advanced Reset Technology</p>
+          <p class="footer-tagline">Precision Parts. Rapid Reset.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Shop</h5>
+          <a href="./index.html#glock">Glock Kits</a>
+          <a href="./index.html#ruger">10/22 Kits</a>
+          <a href="./index.html#mp5">MP5-22</a>
+          <a href="./index.html#muzzle">Muzzle Devices</a>
+          <a href="./index.html#accessories">Accessories</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="mailto:info@advancedresettech.com">Email Us</a>
+          <a href="./index.html">Back to Home</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Advanced Reset Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h2>Your Cart</h2>
+      <button class="cart-close" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-body" id="cartBody"><p class="cart-empty">Your cart is empty.</p></div>
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="ship-bar-label" id="shipLabel"></div>
+      <div class="ship-bar-track"><div class="ship-bar-fill" id="shipFill"></div></div>
+      <div class="cart-subtotal"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <button class="btn-checkout" onclick="handleCheckout()">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const CATEGORY_LABELS = {
+      glock: 'Glock Kits', ruger: 'Ruger 10/22', mp5: 'MP5-22',
+      muzzle: 'Muzzle Devices', accessories: 'Accessories'
+    };
+
+    let activeFilter = 'all';
+
+    function renderShop(filter) {
+      const grid = document.getElementById('shopGrid');
+      const countEl = document.getElementById('shopCount');
+      const filtered = filter === 'all' ? ART_PRODUCTS : ART_PRODUCTS.filter(p => p.category === filter);
+
+      countEl.textContent = `${filtered.length} product${filtered.length !== 1 ? 's' : ''}`;
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+          <div class="product-img">
+            ${p.tag ? `<span class="badge badge-hot">${p.tag}</span>` : ''}
+            <img src="${p.image}" alt="${p.name}" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-tag" style="color:var(--muted);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">${CATEGORY_LABELS[p.category]}</p>
+            <p class="product-name">${p.name}</p>
+            <div class="product-avail">
+              <span class="dot ${p.availability === 'in-stock' ? 'dot-green' : 'dot-amber'}"></span>
+              ${p.leadText}
+            </div>
+            <div class="product-price">$${p.price.toFixed(2)}</div>
+            <button class="btn-add" onclick="event.stopPropagation(); addToCart('${p.name.replace(/'/g,"\\'")}', ${p.price})">Add to Cart</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        renderShop(activeFilter);
+      });
+    });
+
+    renderShop('all');
+  </script>
+</body>
+</html>

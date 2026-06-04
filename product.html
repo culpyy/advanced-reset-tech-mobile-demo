@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product — Advanced Reset Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .product-page { padding: 40px 0 80px; background: var(--off); }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--muted); transition: color .15s; }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb span { color: var(--text); font-weight: 600; }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 720px) {
+      .product-layout { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    }
+
+    .product-gallery {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-gallery img { width: 100%; height: 100%; object-fit: contain; padding: 32px; }
+
+    .product-detail-body {}
+
+    .detail-category {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .detail-name {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .detail-avail {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .detail-price {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+    .detail-desc {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 28px;
+      border-top: 1px solid var(--subtle);
+      padding-top: 24px;
+    }
+
+    .detail-add {
+      background: var(--black);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border-radius: 4px;
+      width: 100%;
+      transition: background .15s;
+      margin-bottom: 12px;
+      min-height: 52px;
+      cursor: pointer;
+      border: none;
+    }
+    .detail-add:hover  { background: var(--orange); }
+    .detail-add:active { background: var(--orange-h); }
+
+    .detail-note {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .detail-section { margin-bottom: 28px; }
+    .detail-section h3 {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--subtle);
+    }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #444;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--subtle);
+      line-height: 1.5;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 900;
+      font-size: 12px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .compat-list { list-style: none; padding: 0; }
+    .compat-list li {
+      font-size: 13px;
+      color: #444;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--subtle);
+      padding-left: 14px;
+      position: relative;
+    }
+    .compat-list li::before { content: '·'; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
+    .compat-list li:last-child { border-bottom: none; }
+
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table tr { border-bottom: 1px solid var(--subtle); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td {
+      font-size: 13px;
+      padding: 8px 0;
+      vertical-align: top;
+    }
+    .specs-table td:first-child { color: var(--muted); font-weight: 600; width: 45%; }
+    .specs-table td:last-child  { color: var(--text);  font-weight: 700; }
+
+    .related-section { padding: 48px 0 64px; background: var(--white); }
+    .related-section h2 { font-size: 22px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 24px; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (min-width: 580px) { .related-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px) { .related-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .not-found {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .not-found h2 { font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+    .not-found p  { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+  <div class="announce">Ships Free on Orders Over $50 — No Hidden Fees. Ever.</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-art">A.R.T.</span>
+        <span class="logo-sub">Advanced Reset Tech</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="./index.html#glock">Glock</a>
+        <a href="./index.html#ruger">10/22</a>
+        <a href="./index.html#mp5">MP5-22</a>
+        <a href="./index.html#muzzle">Muzzle</a>
+        <a href="./index.html#accessories">Accessories</a>
+        <a href="./shop.html" class="nav-store">Shop All</a>
+      </nav>
+      <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-btn-text">Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="productContent"></div>
+
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h2>Your Cart</h2>
+      <button class="cart-close" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-body" id="cartBody"><p class="cart-empty">Your cart is empty.</p></div>
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="ship-bar-label" id="shipLabel"></div>
+      <div class="ship-bar-track"><div class="ship-bar-fill" id="shipFill"></div></div>
+      <div class="cart-subtotal"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <button class="btn-checkout" onclick="handleCheckout()">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const CATEGORY_LABELS = {
+      glock: 'Glock Kits', ruger: 'Ruger 10/22', mp5: 'MP5-22',
+      muzzle: 'Muzzle Devices', accessories: 'Accessories'
+    };
+
+    function getParam(key) {
+      return new URLSearchParams(window.location.search).get(key);
+    }
+
+    function esc(str) {
+      return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    }
+
+    function renderProduct() {
+      const id = getParam('id');
+      const p  = ART_PRODUCTS.find(x => x.id === id);
+      const el = document.getElementById('productContent');
+
+      if (!p) {
+        el.innerHTML = `
+          <div class="container not-found">
+            <h2>Product Not Found</h2>
+            <p>We couldn't find that product.</p>
+            <a href="shop.html" class="btn-orange" style="display:inline-flex;padding:14px 28px;border-radius:4px;">Browse All Products</a>
+          </div>`;
+        return;
+      }
+
+      document.title = `${p.name} — Advanced Reset Tech`;
+
+      const related = ART_PRODUCTS.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
+
+      el.innerHTML = `
+        <section class="product-page">
+          <div class="container">
+            <nav class="breadcrumb">
+              <a href="./index.html">Home</a> /
+              <a href="./shop.html">${CATEGORY_LABELS[p.category]}</a> /
+              <span>${p.name}</span>
+            </nav>
+            <div class="product-layout">
+
+              <div class="product-gallery">
+                <img src="${p.image}" alt="${p.name}" loading="eager"/>
+              </div>
+
+              <div class="product-detail-body">
+                <p class="detail-category">${CATEGORY_LABELS[p.category]}</p>
+                <h1 class="detail-name">${p.name}</h1>
+                <div class="detail-avail">
+                  <span class="dot ${p.availability === 'in-stock' ? 'dot-green' : 'dot-amber'}"></span>
+                  ${p.leadText}
+                </div>
+                <div class="detail-price">$${p.price.toFixed(2)}</div>
+
+                <p class="detail-desc">${p.description}</p>
+
+                <button class="detail-add" onclick="addToCart('${esc(p.name)}', ${p.price})">
+                  Add to Cart — $${p.price.toFixed(2)}
+                </button>
+                <p class="detail-note">Free shipping on orders over $50 · Lifetime Warranty</p>
+
+                <div class="detail-section">
+                  <h3>What's Included</h3>
+                  <ul class="feature-list">
+                    ${p.features.map(f => `<li>${f}</li>`).join('')}
+                  </ul>
+                </div>
+
+                ${p.compatibility.length ? `
+                <div class="detail-section">
+                  <h3>Compatibility</h3>
+                  <ul class="compat-list">
+                    ${p.compatibility.map(c => `<li>${c}</li>`).join('')}
+                  </ul>
+                </div>` : ''}
+
+                <div class="detail-section">
+                  <h3>Specifications</h3>
+                  <table class="specs-table">
+                    ${Object.entries(p.specs).map(([k,v]) => `
+                      <tr><td>${k}</td><td>${v}</td></tr>
+                    `).join('')}
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        ${related.length ? `
+        <section class="related-section">
+          <div class="container">
+            <h2>More in ${CATEGORY_LABELS[p.category]}</h2>
+            <div class="related-grid">
+              ${related.map(r => `
+                <div class="product-card" onclick="location.href='product.html?id=${r.id}'" style="cursor:pointer">
+                  <div class="product-img">
+                    ${r.tag ? `<span class="badge badge-hot">${r.tag}</span>` : ''}
+                    <img src="${r.image}" alt="${r.name}" loading="lazy"/>
+                  </div>
+                  <div class="product-body">
+                    <p class="product-name">${r.name}</p>
+                    <div class="product-avail">
+                      <span class="dot ${r.availability === 'in-stock' ? 'dot-green' : 'dot-amber'}"></span>
+                      ${r.leadText}
+                    </div>
+                    <div class="product-price">$${r.price.toFixed(2)}</div>
+                    <button class="btn-add" onclick="event.stopPropagation(); addToCart('${esc(r.name)}', ${r.price})">Add to Cart</button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>` : ''}
+
+        <footer class="footer">
+          <div class="container">
+            <div class="footer-top">
+              <div class="footer-brand">
+                <span class="footer-logo">A.R.T.</span>
+                <p>Advanced Reset Technology</p>
+                <p class="footer-tagline">Precision Parts. Rapid Reset.</p>
+              </div>
+              <div class="footer-col">
+                <h5>Shop</h5>
+                <a href="./shop.html">All Products</a>
+                <a href="./index.html#glock">Glock Kits</a>
+                <a href="./index.html#ruger">10/22 Kits</a>
+                <a href="./index.html#mp5">MP5-22</a>
+              </div>
+              <div class="footer-col">
+                <h5>Support</h5>
+                <a href="mailto:info@advancedresettech.com">Email Us</a>
+                <a href="./index.html">Back to Home</a>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>© 2024 Advanced Reset Technology. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      `;
+    }
+
+    renderProduct();
+  </script>
+</body>
+</html>
