@@ -21,11 +21,6 @@ function renderCart() {
   countEl.textContent = count;
   countEl.classList.toggle('visible', count > 0);
 
-  const floatCount = document.getElementById('floatCartCount');
-  if (floatCount) {
-    floatCount.textContent = count;
-    floatCount.classList.toggle('visible', count > 0);
-  }
 
   const itemsEl   = document.getElementById('cartItems');
   const footerEl  = document.getElementById('cartFooter');

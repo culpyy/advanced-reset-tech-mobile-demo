@@ -77,6 +77,35 @@ button { font-family: inherit; }
 .header-actions { display: flex; align-items: center; }
 .menu-btn { display: none; }
 
+.cart-btn {
+  background: var(--orange);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition: background .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.cart-btn:active { background: var(--orange-h); }
+.cart-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.cart-label { font-size: 12px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+.cart-count {
+  background: var(--white);
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 900;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: scale(0);
+  transition: all .2s;
+}
+.cart-count.visible { opacity: 1; transform: scale(1); }
+
 /* ─── TRUST BAR ────────────────────────────────────────────── */
 .trust-bar {
   background: var(--dark);
@@ -448,44 +477,6 @@ button { font-family: inherit; }
 .footer-bottom { font-size: 11px; color: #333; }
 .footer-note { margin-top: 4px; }
 
-/* ─── FLOATING CART ────────────────────────────────────────── */
-.float-cart {
-  position: fixed;
-  bottom: 24px;
-  right: 20px;
-  z-index: 150;
-  background: var(--orange);
-  color: var(--white);
-  border: none;
-  border-radius: 50%;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(224,92,0,0.5);
-  transition: transform .18s, box-shadow .18s;
-  -webkit-tap-highlight-color: transparent;
-}
-.float-cart:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(224,92,0,0.55); }
-.float-cart:active { transform: scale(0.95); }
-.float-cart svg { width: 22px; height: 22px; }
-.float-cart-count {
-  position: absolute;
-  top: -2px; right: -2px;
-  background: var(--white);
-  color: var(--orange);
-  font-size: 9px;
-  font-weight: 900;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transform: scale(0);
-  transition: all .2s;
-  border: 2px solid var(--orange);
-}
-.float-cart-count.visible { opacity: 1; transform: scale(1); }
 
 /* ─── CART DRAWER ──────────────────────────────────────────── */
 .cart-overlay {
