@@ -333,9 +333,21 @@ button { font-family: inherit; cursor: pointer; border: none; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: opacity .2s;
+  transition: box-shadow .2s, transform .2s;
+  position: relative;
+  border-radius: 6px;
 }
-.product-card:active { opacity: 0.9; }
+.product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+
+/* Full-card link sits behind the Add to Cart button */
+.card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.product-body { position: relative; z-index: 1; }
+.product-img  { position: relative; z-index: 1; }
+.badge        { z-index: 2; }
 
 .product-img {
   background: var(--off);
