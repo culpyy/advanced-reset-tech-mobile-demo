@@ -21,6 +21,12 @@ function renderCart() {
   countEl.textContent = count;
   countEl.classList.toggle('visible', count > 0);
 
+  const bnavBadge = document.getElementById('bnavBadge');
+  if (bnavBadge) {
+    bnavBadge.textContent = count;
+    bnavBadge.classList.toggle('visible', count > 0);
+  }
+
   const itemsEl   = document.getElementById('cartItems');
   const footerEl  = document.getElementById('cartFooter');
   const totalEl   = document.getElementById('cartTotal');
