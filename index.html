@@ -69,12 +69,43 @@
         <a href="#glock" class="btn btn-primary">Shop Glock Kits</a>
         <a href="#ruger" class="btn btn-outline">Shop 10/22 Kits</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Orders Shipped</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Avg. Rating</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">Lifetime</span><span class="stat-label">Warranty</span></div>
+    </div>
+    <!-- Hero product shelf -->
+    <div class="hero-shelf">
+      <div class="shelf-card" onclick="addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">
+        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1" alt="Gen 5 Kit" loading="lazy"/>
+        <div class="shelf-card-info">
+          <div class="shelf-card-name">Gen 5 Trigger Kit</div>
+          <div class="shelf-card-price">$274.99</div>
+        </div>
+      </div>
+      <div class="shelf-card" onclick="addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">
+        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/116/418/Glock_ART_advanced_reset_tech_GEN_4_trigger_kit_Glock_FRT_Glock_ART__83170.1764272764.jpg?c=1" alt="Gen 4 Kit" loading="lazy"/>
+        <div class="shelf-card-info">
+          <div class="shelf-card-name">Gen 4 Trigger Kit</div>
+          <div class="shelf-card-price">$249.99</div>
+        </div>
+      </div>
+      <div class="shelf-card" onclick="addToCart('10/22 Complete ART Kit', 199.99)">
+        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="10/22 Kit" loading="lazy"/>
+        <div class="shelf-card-info">
+          <div class="shelf-card-name">10/22 ART Lever Kit</div>
+          <div class="shelf-card-price">$179.99</div>
+        </div>
+      </div>
+      <div class="shelf-card" onclick="addToCart('Aluminum Blast Diverter', 39.99)">
+        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/155/530/09192AEC-2BC4-4AB8-8161-26FEE466E2B1__04127.1773128248.png?c=1" alt="Blast Diverter" loading="lazy"/>
+        <div class="shelf-card-info">
+          <div class="shelf-card-name">Blast Diverter</div>
+          <div class="shelf-card-price">$39.99</div>
+        </div>
+      </div>
+      <div class="shelf-card" onclick="addToCart('Extended Knurled Charging Handle', 24.99)">
+        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1" alt="Charging Handle" loading="lazy"/>
+        <div class="shelf-card-info">
+          <div class="shelf-card-name">Charging Handle</div>
+          <div class="shelf-card-price">$24.99</div>
+        </div>
       </div>
     </div>
   </section>
@@ -510,15 +541,12 @@
     </div>
   </aside>
 
-  <!-- BOTTOM NAV (mobile only) -->
-  <nav class="bottom-nav">
-    <a href="#shop" class="bnav-item">Shop All</a>
-    <a href="#glock" class="bnav-item">Glock</a>
-    <a href="#ruger" class="bnav-item">10/22</a>
-    <a href="#" onclick="toggleCart(); return false;" class="bnav-item bnav-cart">
-      Cart <span class="bnav-badge" id="bnavBadge">0</span>
-    </a>
-  </nav>
+  <!-- FLOATING CART -->
+  <button class="float-cart" onclick="toggleCart()" aria-label="Open cart">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <span class="float-cart-label">Cart</span>
+    <span class="float-cart-count" id="floatCartCount">0</span>
+  </button>
 
   <script src="app.js"></script>
 </body>
