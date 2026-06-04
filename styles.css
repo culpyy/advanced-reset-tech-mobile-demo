@@ -339,15 +339,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 .product-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
 
-/* Full-card link sits behind the Add to Cart button */
-.card-link {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.product-body { position: relative; z-index: 1; }
-.product-img  { position: relative; z-index: 1; }
-.badge        { z-index: 2; }
+.product-card[data-url] { cursor: pointer; }
 
 .product-img {
   background: var(--off);

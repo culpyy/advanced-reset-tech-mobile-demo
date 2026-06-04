@@ -13,6 +13,14 @@ document.addEventListener('click', e => {
   target.scrollIntoView({ behavior: 'smooth' });
 });
 
+// ─── PRODUCT CARD CLICKS ────────────────────────────────────
+document.addEventListener('click', e => {
+  const card = e.target.closest('.product-card[data-url]');
+  if (!card) return;
+  if (e.target.closest('.btn-add')) return;
+  window.open(card.dataset.url, '_blank');
+});
+
 // ─── CART ───────────────────────────────────────────────────
 const cart = [];
 const SHIP_MIN = 50;
