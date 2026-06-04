@@ -88,6 +88,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   transition: color .15s;
 }
 .nav-desktop a:hover { color: var(--white); }
+.nav-store { color: var(--orange) !important; }
+.nav-store:hover { color: #ff7a1a !important; }
 
 .cart-btn {
   background: none;
