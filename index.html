@@ -1,278 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advanced Reset Tech — Precision Trigger Kits & Parts</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Reset Tech — Precision Trigger Kits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <div class="announce">Free shipping on orders over $50 — No hidden fees</div>
+
   <header class="header">
     <div class="header-inner">
-      <div class="logo">
+      <a href="#" class="logo">
         <span class="logo-art">A.R.T.</span>
         <span class="logo-sub">Advanced Reset Tech</span>
-      </div>
+      </a>
       <nav class="nav-desktop">
-        <a href="#glock">Glock Kits</a>
-        <a href="#ruger">10/22 Kits</a>
-        <a href="#muzzle">Muzzle Devices</a>
+        <a href="#glock">Glock</a>
+        <a href="#ruger">10/22</a>
+        <a href="#muzzle">Muzzle</a>
         <a href="#accessories">Accessories</a>
       </nav>
-      <div class="header-actions">
-        <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="cart-label">Cart</span>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-      </div>
+      <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-btn-text">Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
     </div>
-    <nav class="nav-mobile" id="mobileNav">
-      <a href="#glock" onclick="toggleMenu()">Glock Kits</a>
-      <a href="#ruger" onclick="toggleMenu()">10/22 Kits</a>
-      <a href="#muzzle" onclick="toggleMenu()">Muzzle Devices</a>
-      <a href="#accessories" onclick="toggleMenu()">Accessories</a>
-    </nav>
   </header>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      Free Ship $50+
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Lifetime Warranty
-    </div>
-    <div class="trust-divider"></div>
-    <div class="trust-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      USA Made
-    </div>
-  </div>
-
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Engineered for Performance</p>
-      <h1>Built for<br/><span class="hero-accent">Rapid Reset.</span></h1>
-      <p class="hero-sub">Precision trigger kits and parts for Glock and Ruger 10/22 platforms. Drop-in fit. No gunsmithing required.</p>
-      <div class="hero-cta">
-        <a href="#glock" class="btn btn-primary">Shop Glock Kits</a>
-        <a href="#ruger" class="btn btn-outline">Shop 10/22 Kits</a>
-      </div>
-    </div>
-    <!-- Hero product shelf -->
-    <div class="hero-shelf">
-      <div class="shelf-card" onclick="addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">
-        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1" alt="Gen 5 Kit" loading="lazy"/>
-        <div class="shelf-card-info">
-          <div class="shelf-card-name">Gen 5 Trigger Kit</div>
-          <div class="shelf-card-price">$274.99</div>
-        </div>
-      </div>
-      <div class="shelf-card" onclick="addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">
-        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/116/418/Glock_ART_advanced_reset_tech_GEN_4_trigger_kit_Glock_FRT_Glock_ART__83170.1764272764.jpg?c=1" alt="Gen 4 Kit" loading="lazy"/>
-        <div class="shelf-card-info">
-          <div class="shelf-card-name">Gen 4 Trigger Kit</div>
-          <div class="shelf-card-price">$249.99</div>
-        </div>
-      </div>
-      <div class="shelf-card" onclick="addToCart('10/22 Complete ART Kit', 199.99)">
-        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="10/22 Kit" loading="lazy"/>
-        <div class="shelf-card-info">
-          <div class="shelf-card-name">10/22 ART Lever Kit</div>
-          <div class="shelf-card-price">$179.99</div>
-        </div>
-      </div>
-      <div class="shelf-card" onclick="addToCart('Aluminum Blast Diverter', 39.99)">
-        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/155/530/09192AEC-2BC4-4AB8-8161-26FEE466E2B1__04127.1773128248.png?c=1" alt="Blast Diverter" loading="lazy"/>
-        <div class="shelf-card-info">
-          <div class="shelf-card-name">Blast Diverter</div>
-          <div class="shelf-card-price">$39.99</div>
-        </div>
-      </div>
-      <div class="shelf-card" onclick="addToCart('Extended Knurled Charging Handle', 24.99)">
-        <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1" alt="Charging Handle" loading="lazy"/>
-        <div class="shelf-card-info">
-          <div class="shelf-card-name">Charging Handle</div>
-          <div class="shelf-card-price">$24.99</div>
-        </div>
+    <div class="hero-inner">
+      <span class="hero-tag">CNC Machined · Made in USA</span>
+      <h1>Built for<br/><em>Rapid Reset.</em></h1>
+      <p class="hero-body">Precision trigger kits and parts engineered for Glock and Ruger 10/22 platforms. Drop-in fit. No gunsmithing required.</p>
+      <div class="hero-actions">
+        <a href="#glock" class="btn-white">Shop Glock Kits</a>
+        <a href="#ruger" class="btn-ghost">Shop 10/22</a>
       </div>
     </div>
   </section>
 
-  <!-- CATEGORIES -->
+  <div class="trust-strip">
+    <div class="trust-strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Free Ship $50+
+    </div>
+    <div class="trust-strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Lifetime Warranty
+    </div>
+    <div class="trust-strip-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      4–6 Wk Lead Time
+    </div>
+  </div>
+
+  <!-- SHOP BY PLATFORM -->
   <section class="categories" id="shop">
     <div class="container">
-      <div class="section-header">
-        <h2>Shop by Platform</h2>
-      </div>
+      <p class="section-label">Browse</p>
+      <h2 class="section-title">Shop by Platform</h2>
       <div class="cat-grid">
         <a href="#glock" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1')">
           <div class="cat-overlay"></div>
-          <div class="cat-text">
+          <div class="cat-body">
             <span class="cat-name">Glock</span>
-            <span class="cat-sub">Gen 3, 4 &amp; 5 Kits →</span>
+            <span class="cat-link">Gen 3, 4 &amp; 5 →</span>
           </div>
         </a>
         <a href="#ruger" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1')">
           <div class="cat-overlay"></div>
-          <div class="cat-text">
+          <div class="cat-body">
             <span class="cat-name">Ruger 10/22</span>
-            <span class="cat-sub">Complete Kits →</span>
+            <span class="cat-link">Complete Kits →</span>
           </div>
         </a>
         <a href="#muzzle" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/157/535/4E401AA5-04BA-4234-913A-407C84930AAE__58850.1773128990.png?c=1')">
           <div class="cat-overlay"></div>
-          <div class="cat-text">
+          <div class="cat-body">
             <span class="cat-name">Muzzle Devices</span>
-            <span class="cat-sub">1/2"×28 Thread →</span>
+            <span class="cat-link">1/2"×28 →</span>
           </div>
         </a>
         <a href="#accessories" class="cat-card" style="--bg:url('https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1')">
           <div class="cat-overlay"></div>
-          <div class="cat-text">
+          <div class="cat-body">
             <span class="cat-name">Accessories</span>
-            <span class="cat-sub">Handles &amp; More →</span>
+            <span class="cat-link">Handles &amp; More →</span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- GLOCK KITS -->
+  <!-- GLOCK -->
   <section class="products" id="glock">
     <div class="container">
-      <div class="section-header">
-        <h2>Glock Trigger Kits</h2>
-        <p>Advanced reset engineered for every Glock generation.</p>
-      </div>
+      <p class="section-label">Glock Trigger Kits</p>
+      <h2 class="section-title">Advanced Reset for Every Generation</h2>
       <div class="product-grid">
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1" alt="A.R.T. Trigger Kit Gen 5" loading="lazy" />
-            <span class="badge badge-hot">Best Seller</span>
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/117/420/1__72492.1765690792.png?c=1" alt="Gen 5 Trigger Kit" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-lead"></span><span class="stock-label">4–6 Week Lead Time</span></div>
-            <h3>A.R.T. Trigger Kit — Gen 5 Glock</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(38)</span></div>
-            <div class="price-row"><span class="price">$274.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/116/418/Glock_ART_advanced_reset_tech_GEN_4_trigger_kit_Glock_FRT_Glock_ART__83170.1764272764.jpg?c=1" alt="A.R.T. Trigger Kit Gen 4" loading="lazy" />
-            <span class="badge badge-hot">Best Seller</span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-lead"></span><span class="stock-label">4–6 Week Lead Time</span></div>
-            <h3>A.R.T. Trigger Kit — Gen 4 Glock</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(52)</span></div>
-            <div class="price-row"><span class="price">$249.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">Add to Cart</button>
+          <div class="product-body">
+            <span class="product-tag">Best Seller</span>
+            <p class="product-name">A.R.T. Trigger Kit — Gen 5 Glock</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
+            <div class="product-price">$274.99</div>
+            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 5', 274.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/115/380/combatmaster_flatface__64607.1764226241.jpg?c=1" alt="A.R.T. Trigger Kit Gen 3" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/116/418/Glock_ART_advanced_reset_tech_GEN_4_trigger_kit_Glock_FRT_Glock_ART__83170.1764272764.jpg?c=1" alt="Gen 4 Trigger Kit" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-lead"></span><span class="stock-label">4–6 Week Lead Time</span></div>
-            <h3>A.R.T. Trigger Kit — Gen 3 Glock</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(29)</span></div>
-            <div class="price-row"><span class="price">$264.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 3', 264.99)">Add to Cart</button>
+          <div class="product-body">
+            <span class="product-tag">Best Seller</span>
+            <p class="product-name">A.R.T. Trigger Kit — Gen 4 Glock</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
+            <div class="product-price">$249.99</div>
+            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 4', 249.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/139/467/IMG_8220__66544.1767695046.jpg?c=1" alt="A.R.T. 6/V Trigger Kit" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/115/380/combatmaster_flatface__64607.1764226241.jpg?c=1" alt="Gen 3 Trigger Kit" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-lead"></span><span class="stock-label">4–6 Week Lead Time</span></div>
-            <h3>A.R.T. Trigger Kit — Gen 6/V Glock</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(14)</span></div>
-            <div class="price-row"><span class="price">$274.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 6/V', 274.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">A.R.T. Trigger Kit — Gen 3 Glock</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
+            <div class="product-price">$264.99</div>
+            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 3', 264.99)">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/139/467/IMG_8220__66544.1767695046.jpg?c=1" alt="Gen 6/V Trigger Kit" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-name">A.R.T. Trigger Kit — Gen 6/V Glock</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
+            <div class="product-price">$274.99</div>
+            <button class="btn-add" onclick="addToCart('A.R.T. Trigger Kit — Gen 6/V', 274.99)">Add to Cart</button>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- FEATURE BAND -->
+  <div class="feature-band">
+    <div class="feature-band-inner">
+      <h2>Drop-in fit.<br/>No gunsmithing.</h2>
+      <p>Every A.R.T. kit is engineered to spec for your exact platform. Install in minutes, not hours — no tools, no guesswork, no modifications required.</p>
+      <a href="#shop" class="btn-orange">Browse All Products</a>
+    </div>
+  </div>
 
   <!-- RUGER 10/22 -->
   <section class="products products-alt" id="ruger">
     <div class="container">
-      <div class="section-header">
-        <h2>Ruger 10/22 Kits</h2>
-        <p>Full reset and tune-up kits built for the 10/22 platform.</p>
-      </div>
+      <p class="section-label">Ruger 10/22</p>
+      <h2 class="section-title">Reset Kits for the 10/22 Platform</h2>
       <div class="product-grid">
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="MP5-22 ART Lever" loading="lazy" />
-            <span class="badge badge-hot">Best Seller</span>
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/148/515/BA82A9E7-258F-4AB9-B739-558692903280__00479.1772588010.png?c=1" alt="MP5-22 ART Lever" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-lead"></span><span class="stock-label">4–6 Week Lead Time</span></div>
-            <h3>MP5-22 A.R.T. Lever + Adjustable Buffer</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(61)</span></div>
-            <div class="price-row"><span class="price">$179.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('MP5-22 ART Lever + Buffer', 179.99)">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/145/507/0F13E74F-69FF-4650-9B20-8EC700279C71__61212.1769500091.png?c=1" alt="10/22 Slip-On Thread Adapter" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>10/22 Slip-On Thread Adapter — 1/2×28</h3>
-            <div class="stars"><span>★★★★☆</span><span class="review-count">(44)</span></div>
-            <div class="price-row"><span class="price">$29.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('10/22 Slip-On Thread Adapter', 29.99)">Add to Cart</button>
+          <div class="product-body">
+            <span class="product-tag">Best Seller</span>
+            <p class="product-name">MP5-22 A.R.T. Lever + Adjustable Buffer</p>
+            <div class="product-avail"><span class="dot dot-amber"></span>4–6 Week Lead Time</div>
+            <div class="product-price">$179.99</div>
+            <button class="btn-add" onclick="addToCart('MP5-22 ART Lever + Buffer', 179.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/144/506/8C3BBDD1-0CFF-4F38-B38B-34BCB38A2FFE__69717.1769385709.jpg?c=1" alt="Auto-Release Bolt Catch" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/144/506/8C3BBDD1-0CFF-4F38-B38B-34BCB38A2FFE__69717.1769385709.jpg?c=1" alt="Auto-Release Bolt Catch" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>A.R.T. Auto-Release Bolt Catch — 10/22</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(33)</span></div>
-            <div class="price-row"><span class="price">$14.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Auto-Release Bolt Catch', 14.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">A.R.T. Auto-Release Bolt Catch — 10/22</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$14.99</div>
+            <button class="btn-add" onclick="addToCart('Auto-Release Bolt Catch', 14.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/156/534/9345B08C-8B48-4944-8D63-C28AF52A89C6__70087.1773128511.png?c=1" alt="10/22 Barrel Mount V-Block" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/145/507/0F13E74F-69FF-4650-9B20-8EC700279C71__61212.1769500091.png?c=1" alt="Thread Adapter" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>10/22 Barrel Mount V-Block</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(17)</span></div>
-            <div class="price-row"><span class="price">$34.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('10/22 Barrel Mount V-Block', 34.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">10/22 Slip-On Thread Adapter — 1/2×28</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$29.99</div>
+            <button class="btn-add" onclick="addToCart('10/22 Slip-On Thread Adapter', 29.99)">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/156/534/9345B08C-8B48-4944-8D63-C28AF52A89C6__70087.1773128511.png?c=1" alt="V-Block" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-name">10/22 Barrel Mount V-Block</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$34.99</div>
+            <button class="btn-add" onclick="addToCart('10/22 Barrel Mount V-Block', 34.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -280,66 +227,59 @@
     </div>
   </section>
 
-  <!-- MUZZLE DEVICES -->
+  <!-- MUZZLE -->
   <section class="products" id="muzzle">
     <div class="container">
-      <div class="section-header">
-        <h2>Muzzle Devices</h2>
-        <p>1/2"×28 threaded. Ships fast.</p>
-      </div>
+      <p class="section-label">Muzzle Devices</p>
+      <h2 class="section-title">1/2"×28 Threaded — Ships Fast</h2>
       <div class="product-grid">
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/157/535/4E401AA5-04BA-4234-913A-407C84930AAE__58850.1773128990.png?c=1" alt="Flashbang Brake" loading="lazy" />
-            <span class="badge badge-hot">New</span>
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/157/535/4E401AA5-04BA-4234-913A-407C84930AAE__58850.1773128990.png?c=1" alt="Flashbang Brake" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>Flashbang Brake — 1/2"×28</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(11)</span></div>
-            <div class="price-row"><span class="price">$44.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Flashbang Brake', 44.99)">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/155/530/09192AEC-2BC4-4AB8-8161-26FEE466E2B1__04127.1773128248.png?c=1" alt="Aluminum Blast Diverter" loading="lazy" />
-            <span class="badge badge-sale">On Sale</span>
-          </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>Aluminum Blast Diverter — 1/2"×28</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(22)</span></div>
-            <div class="price-row"><span class="price">$39.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Aluminum Blast Diverter', 39.99)">Add to Cart</button>
+          <div class="product-body">
+            <span class="product-tag">New</span>
+            <p class="product-name">Flashbang Brake — 1/2"×28</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$44.99</div>
+            <button class="btn-add" onclick="addToCart('Flashbang Brake', 44.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/147/514/DE7662CD-79E7-42A4-9511-99FFC62E6AB8__47189.1768282477.1280.1280__82121.1771113022.png?c=1" alt="Golf Ball Launcher" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/155/530/09192AEC-2BC4-4AB8-8161-26FEE466E2B1__04127.1773128248.png?c=1" alt="Blast Diverter" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>Thread-On Golf Ball Launcher — 1/2"×28</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(18)</span></div>
-            <div class="price-row"><span class="price">$39.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Golf Ball Launcher', 39.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">Aluminum Blast Diverter — 1/2"×28</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$39.99</div>
+            <button class="btn-add" onclick="addToCart('Aluminum Blast Diverter', 39.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/137/462/RenderedImage__56052.1767583304.jpg?c=1" alt="9-Port Mega Thumper Muzzle Brake" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/147/514/DE7662CD-79E7-42A4-9511-99FFC62E6AB8__47189.1768282477.1280.1280__82121.1771113022.png?c=1" alt="Golf Ball Launcher" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>9-Port Mega Thumper Muzzle Brake</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(9)</span></div>
-            <div class="price-row"><span class="price">$49.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('9-Port Mega Thumper Muzzle Brake', 49.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">Thread-On Golf Ball Launcher — 1/2"×28</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$39.99</div>
+            <button class="btn-add" onclick="addToCart('Golf Ball Launcher', 39.99)">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/137/462/RenderedImage__56052.1767583304.jpg?c=1" alt="Mega Thumper" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-name">9-Port Mega Thumper Muzzle Brake</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$49.99</div>
+            <button class="btn-add" onclick="addToCart('9-Port Mega Thumper', 49.99)">Add to Cart</button>
           </div>
         </div>
 
@@ -350,64 +290,87 @@
   <!-- ACCESSORIES -->
   <section class="products products-alt" id="accessories">
     <div class="container">
-      <div class="section-header">
-        <h2>Accessories</h2>
-        <p>The details that make the difference.</p>
-      </div>
+      <p class="section-label">Accessories</p>
+      <h2 class="section-title">The Details That Make the Difference</h2>
       <div class="product-grid">
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1" alt="Extended Knurled Charging Handle" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/154/528/40ECFFB5-7C62-4288-83C0-A7A63283A11C__93061.1773810836.png?c=1" alt="Charging Handle" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>Extended Knurled Charging Handle</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(27)</span></div>
-            <div class="price-row"><span class="price">$24.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Extended Knurled Charging Handle', 24.99)">Add to Cart</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/153/525/6175F262-4E4C-415A-AA3C-93F73C417F70__17828.1773127106.png?c=1" alt="Ergonomic M-LOK Hand Stop" loading="lazy" />
-          </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>Ergonomic M-LOK Hand Stop</h3>
-            <div class="stars"><span>★★★★☆</span><span class="review-count">(8)</span></div>
-            <div class="price-row"><span class="price">$19.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('Ergonomic M-LOK Hand Stop', 19.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">Extended Knurled Charging Handle</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$24.99</div>
+            <button class="btn-add" onclick="addToCart('Extended Knurled Charging Handle', 24.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/152/522/805419A3-3B34-427D-8E44-A2B52CCAA5C2__32737.1773123050.png?c=1" alt="M-LOK Angled Grip Index" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/153/525/6175F262-4E4C-415A-AA3C-93F73C417F70__17828.1773127106.png?c=1" alt="M-LOK Hand Stop" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>M-LOK Angled Grip Index</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(12)</span></div>
-            <div class="price-row"><span class="price">$22.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('M-LOK Angled Grip Index', 22.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">Ergonomic M-LOK Hand Stop</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$19.99</div>
+            <button class="btn-add" onclick="addToCart('Ergonomic M-LOK Hand Stop', 19.99)">Add to Cart</button>
           </div>
         </div>
 
         <div class="product-card">
-          <div class="product-img-wrap">
-            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/151/519/CC0A6435-EAF8-4479-9BC1-383189B8F6D4__94484.1773121880.jpg?c=1" alt="M-Lok Aluminum Picatinny Mount" loading="lazy" />
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/152/522/805419A3-3B34-427D-8E44-A2B52CCAA5C2__32737.1773123050.png?c=1" alt="Angled Grip" loading="lazy"/>
           </div>
-          <div class="product-info">
-            <div class="product-meta"><span class="stock-dot stock-in"></span><span class="stock-label">In Stock</span></div>
-            <h3>M-Lok Aluminum 8-Slot Picatinny Mount</h3>
-            <div class="stars"><span>★★★★★</span><span class="review-count">(6)</span></div>
-            <div class="price-row"><span class="price">$27.99</span></div>
-            <button class="btn btn-add" onclick="addToCart('M-Lok 8-Slot Picatinny Mount', 27.99)">Add to Cart</button>
+          <div class="product-body">
+            <p class="product-name">M-LOK Angled Grip Index</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$22.99</div>
+            <button class="btn-add" onclick="addToCart('M-LOK Angled Grip Index', 22.99)">Add to Cart</button>
           </div>
         </div>
 
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://cdn11.bigcommerce.com/s-zjikhrk7dh/images/stencil/500x659/products/151/519/CC0A6435-EAF8-4479-9BC1-383189B8F6D4__94484.1773121880.jpg?c=1" alt="Picatinny Mount" loading="lazy"/>
+          </div>
+          <div class="product-body">
+            <p class="product-name">M-Lok 8-Slot Picatinny Mount</p>
+            <div class="product-avail"><span class="dot dot-green"></span>In Stock</div>
+            <div class="product-price">$27.99</div>
+            <button class="btn-add" onclick="addToCart('M-Lok 8-Slot Picatinny Mount', 27.99)">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISES -->
+  <section class="promises">
+    <div class="container">
+      <p class="section-label">Our Promise</p>
+      <div class="promise-grid">
+        <div class="promise-item">
+          <div class="promise-icon">⚙️</div>
+          <h4>CNC Precision</h4>
+          <p>Every part machined domestically to mil-spec tolerances.</p>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon">🛡️</div>
+          <h4>Lifetime Warranty</h4>
+          <p>We stand behind every part we make. No exceptions.</p>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon">✅</div>
+          <h4>Drop-In Fit</h4>
+          <p>Engineered to spec. No gunsmithing, no modifications.</p>
+        </div>
+        <div class="promise-item">
+          <div class="promise-icon">📦</div>
+          <h4>Honest Lead Times</h4>
+          <p>We tell you exactly when to expect your order. No surprises.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -415,75 +378,34 @@
   <!-- REVIEWS -->
   <section class="reviews">
     <div class="container">
-      <div class="section-header light">
-        <h2>What Customers Say</h2>
-        <div class="overall-rating">
-          <span class="stars-lg">★★★★★</span>
-          <span class="rating-num">4.9</span>
-          <span class="rating-sep">·</span>
-          <span class="rating-count">277 verified reviews</span>
-        </div>
+      <p class="section-label">Customer Reviews</p>
+      <h2 class="section-title">What Customers Say</h2>
+      <div class="reviews-meta">
+        <span class="reviews-stars">★★★★★</span>
+        <span class="reviews-score">4.9</span>
+        <span class="reviews-count">· 277 verified reviews</span>
       </div>
       <div class="review-grid">
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Trigger feel is night and day. Reset is crisp, fast, and consistent. Absolutely worth the wait — quality is obvious the second you handle it."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">JR</div>
-            <div>
-              <div class="reviewer-name">Jason R.</div>
-              <div class="reviewer-meta">Verified · Gen 5 Kit</div>
-            </div>
-          </div>
+          <div class="review-card-stars">★★★★★</div>
+          <p class="review-card-text">"Trigger feel is night and day. Reset is crisp, fast, and consistent. Quality is obvious the second you handle it."</p>
+          <div class="review-card-author">Jason R.</div>
+          <div class="review-card-meta">Verified Purchase · Gen 5 Kit</div>
         </div>
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Dropped right in with zero issues. Fit and finish is excellent. Feels like a $400 aftermarket trigger at half the price."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">MK</div>
-            <div>
-              <div class="reviewer-name">Mike K.</div>
-              <div class="reviewer-meta">Verified · 10/22 Kit</div>
-            </div>
-          </div>
+          <div class="review-card-stars">★★★★★</div>
+          <p class="review-card-text">"Dropped right in with zero issues. Fit and finish is excellent. Feels like a $400 trigger at half the price."</p>
+          <div class="review-card-author">Mike K.</div>
+          <div class="review-card-meta">Verified Purchase · 10/22 Kit</div>
         </div>
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Lead time was accurate, packaging was solid. Customer service responded same day. Will be ordering again — this is the real deal."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">DT</div>
-            <div>
-              <div class="reviewer-name">Derek T.</div>
-              <div class="reviewer-meta">Verified · Gen 4 Kit</div>
-            </div>
-          </div>
+          <div class="review-card-stars">★★★★★</div>
+          <p class="review-card-text">"Lead time was accurate, packaging solid, customer service responded same day. Will be ordering again."</p>
+          <div class="review-card-author">Derek T.</div>
+          <div class="review-card-meta">Verified Purchase · Gen 4 Kit</div>
         </div>
       </div>
-      <p class="reviews-note">* Reviews shown are representative placeholders — replace with real customer reviews before launch.</p>
-    </div>
-  </section>
-
-  <!-- PROMISE -->
-  <section class="promise">
-    <div class="container">
-      <div class="promise-grid">
-        <div class="promise-item">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="M10 16l4 4 8-8"/></svg>
-          <div><h4>Drop-In Fit</h4><p>Engineered to spec. No gunsmithing, no guesswork.</p></div>
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 29s12-6 12-15V5L16 2 4 5v9c0 9 12 15 12 15z"/></svg>
-          <div><h4>Lifetime Warranty</h4><p>We stand behind every part we make. Forever.</p></div>
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="24" height="24" rx="3"/><path d="M10 16h12M16 10v12"/></svg>
-          <div><h4>CNC Precision</h4><p>Every part machined domestically to tight tolerances.</p></div>
-        </div>
-        <div class="promise-item">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 3"/></svg>
-          <div><h4>Honest Lead Times</h4><p>We tell you exactly when to expect it. No surprises.</p></div>
-        </div>
-      </div>
+      <p class="review-note">* Reviews are representative placeholders — replace with real verified reviews before launch.</p>
     </div>
   </section>
 
@@ -492,53 +414,50 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo">A.R.T.</div>
+          <span class="footer-logo">A.R.T.</span>
           <p>Advanced Reset Technology</p>
-          <p class="footer-tagline">Precision Parts. Rapid Reset.</p>
+          <p>Precision Parts. Rapid Reset.</p>
         </div>
-        <div class="footer-links">
+        <div class="footer-col">
           <h5>Shop</h5>
           <a href="#glock">Glock Kits</a>
           <a href="#ruger">10/22 Kits</a>
           <a href="#muzzle">Muzzle Devices</a>
           <a href="#accessories">Accessories</a>
         </div>
-        <div class="footer-links">
+        <div class="footer-col">
           <h5>Support</h5>
           <a href="mailto:info@advancedresettech.com">Email Us</a>
-          <a href="https://advancedresettech.com" target="_blank">Visit Live Store</a>
+          <a href="https://advancedresettech.com" target="_blank">Live Store</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2024 Advanced Reset Technology. All rights reserved.</p>
-        <p class="footer-note">4–6 week build time on all kits. Parts ship separately where applicable.</p>
+        <p>4–6 week build time on kits. Parts ship separately where applicable.</p>
       </div>
     </div>
   </footer>
 
-  <!-- CART DRAWER -->
+  <!-- CART -->
   <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
   <aside class="cart-drawer" id="cartDrawer">
-    <div class="cart-header">
+    <div class="cart-head">
       <h2>Your Cart</h2>
-      <button onclick="toggleCart()" class="cart-close">&times;</button>
+      <button class="cart-close" onclick="toggleCart()">&times;</button>
     </div>
-    <div class="cart-items" id="cartItems">
+    <div class="cart-body" id="cartBody">
       <p class="cart-empty">Your cart is empty.</p>
     </div>
-    <div class="cart-footer" id="cartFooter" style="display:none">
-      <div class="free-ship-bar-wrap">
-        <div class="free-ship-label" id="freeShipLabel"></div>
-        <div class="free-ship-track"><div class="free-ship-fill" id="freeShipFill"></div></div>
-      </div>
-      <div class="cart-total-row">
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="ship-bar-label" id="shipLabel"></div>
+      <div class="ship-bar-track"><div class="ship-bar-fill" id="shipFill"></div></div>
+      <div class="cart-subtotal">
         <span>Subtotal</span>
         <strong id="cartTotal">$0.00</strong>
       </div>
-      <button class="btn btn-primary btn-checkout">Proceed to Checkout</button>
+      <button class="btn-checkout">Checkout</button>
     </div>
   </aside>
-
 
   <script src="app.js"></script>
 </body>

@@ -1,5 +1,5 @@
 const cart = [];
-const FREE_SHIP_THRESHOLD = 50;
+const SHIP_MIN = 50;
 
 function addToCart(name, price) {
   const existing = cart.find(i => i.name === name);
@@ -8,8 +8,8 @@ function addToCart(name, price) {
   openCart();
 }
 
-function removeFromCart(index) {
-  cart.splice(index, 1);
+function removeFromCart(i) {
+  cart.splice(i, 1);
   renderCart();
 }
 
@@ -21,38 +21,34 @@ function renderCart() {
   countEl.textContent = count;
   countEl.classList.toggle('visible', count > 0);
 
+  const body   = document.getElementById('cartBody');
+  const foot   = document.getElementById('cartFoot');
+  const totalEl= document.getElementById('cartTotal');
+  const label  = document.getElementById('shipLabel');
+  const fill   = document.getElementById('shipFill');
 
-  const itemsEl   = document.getElementById('cartItems');
-  const footerEl  = document.getElementById('cartFooter');
-  const totalEl   = document.getElementById('cartTotal');
-  const labelEl   = document.getElementById('freeShipLabel');
-  const fillEl    = document.getElementById('freeShipFill');
-
-  if (cart.length === 0) {
-    itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
-    footerEl.style.display = 'none';
+  if (!cart.length) {
+    body.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+    foot.style.display = 'none';
     return;
   }
 
-  itemsEl.innerHTML = cart.map((item, idx) => `
-    <div class="cart-item">
-      <div class="cart-item-name">${item.name}${item.qty > 1 ? ` <span style="color:#aaa">×${item.qty}</span>` : ''}</div>
-      <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
-      <button class="cart-item-remove" onclick="removeFromCart(${idx})" aria-label="Remove">×</button>
+  body.innerHTML = cart.map((item, idx) => `
+    <div class="cart-line">
+      <div class="cart-line-name">${item.name}${item.qty > 1 ? ` ×${item.qty}` : ''}</div>
+      <div class="cart-line-price">$${(item.price * item.qty).toFixed(2)}</div>
+      <button class="cart-line-remove" onclick="removeFromCart(${idx})">×</button>
     </div>
   `).join('');
 
   totalEl.textContent = `$${total.toFixed(2)}`;
-  footerEl.style.display = 'block';
+  foot.style.display = 'block';
 
-  const pct = Math.min((total / FREE_SHIP_THRESHOLD) * 100, 100);
-  fillEl.style.width = pct + '%';
-
-  const remaining = FREE_SHIP_THRESHOLD - total;
-  labelEl.textContent = remaining > 0
-    ? `Add $${remaining.toFixed(2)} more for free shipping`
-    : '✓ You qualify for free shipping!';
-  labelEl.style.color = remaining <= 0 ? '#22a55b' : '';
+  const pct = Math.min((total / SHIP_MIN) * 100, 100);
+  fill.style.width = pct + '%';
+  const rem = SHIP_MIN - total;
+  label.textContent = rem > 0 ? `Add $${rem.toFixed(2)} for free shipping` : '✓ You qualify for free shipping!';
+  label.style.color = rem <= 0 ? '#16a34a' : '';
 }
 
 function openCart() {
@@ -69,10 +65,6 @@ function closeCart() {
 
 function toggleCart() {
   document.getElementById('cartDrawer').classList.contains('open') ? closeCart() : openCart();
-}
-
-function toggleMenu() {
-  document.getElementById('mobileNav').classList.toggle('open');
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
