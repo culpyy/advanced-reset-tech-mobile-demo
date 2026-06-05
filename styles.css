@@ -323,7 +323,52 @@ button { font-family: inherit; cursor: pointer; border: none; }
   display: block;
 }
 
-/* ─── NEW PLATFORM BAR ─────────────────────────────────────── */
+/* ─── SHOP ALL BUTTON ──────────────────────────────────────── */
+.shop-all-bar {
+  max-width: 1140px;
+  margin: 0 auto 24px;
+  padding: 0 20px;
+}
+
+.shop-all-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--orange) 0%, #ff7a1a 100%);
+  color: var(--white);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(217,95,0,0.25);
+}
+
+.shop-all-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(217,95,0,0.35);
+}
+
+.shop-all-btn:active {
+  transform: translateY(-1px);
+}
+
+.shop-all-name {
+  font-size: 20px;
+  font-weight: 900;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.shop-all-desc {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* ─── PLATFORM BAR ─────────────────────────────────────────── */
 .platform-bar {
   display: flex;
   flex-wrap: wrap;
@@ -358,16 +403,6 @@ button { font-family: inherit; cursor: pointer; border: none; }
   opacity: 0.9;
 }
 
-.platform-btn-all {
-  background: var(--black);
-  border-color: var(--black);
-}
-.platform-btn-all .platform-name { color: var(--white); }
-.platform-btn-all .platform-desc { color: #888; }
-.platform-btn-all:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-}
 
 .platform-name {
   font-size: 15px;
@@ -716,6 +751,10 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .hero-text h1 { font-size: clamp(24px,8vw,36px); }
   .trust-strip { overflow-x: auto; }
   .filter-btn { font-size: 11px; padding: 5px 12px; }
+  .shop-all-bar { padding: 0 16px; margin-bottom: 20px; }
+  .shop-all-btn { padding: 20px 16px; }
+  .shop-all-name { font-size: 18px; }
+  .shop-all-desc { font-size: 12px; }
   .platform-bar { padding: 0 16px; gap: 6px; }
   .platform-btn { min-width: 120px; padding: 14px 10px; }
   .platform-name { font-size: 14px; }
@@ -736,6 +775,8 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .nav-desktop  { display: flex; }
   .hero-text { max-width: 480px; }
   .hero { padding: 80px 20px 88px; }
+  .shop-all-btn { padding: 28px 24px; }
+  .shop-all-name { font-size: 22px; }
   .platform-btn { min-width: 180px; padding: 22px 18px; }
   .platform-name { font-size: 16px; }
 }
