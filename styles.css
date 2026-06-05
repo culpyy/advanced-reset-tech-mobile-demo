@@ -334,7 +334,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 .platform-bar-top {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   justify-content: center;
 }
 
@@ -724,11 +724,25 @@ button { font-family: inherit; cursor: pointer; border: none; }
   .trust-strip { overflow-x: auto; }
   .filter-btn { font-size: 11px; padding: 5px 12px; }
   .platform-bar { padding: 0 16px; gap: 6px; }
-  .platform-bar-top { margin-bottom: 12px; }
+  .platform-bar-top { margin-bottom: 20px; }
   .platform-btn { min-width: 120px; padding: 14px 10px; }
-  .platform-btn-all { min-width: 160px; }
+  .platform-btn-all {
+    min-width: calc(100% - 32px);
+    max-width: 280px;
+    width: 100%;
+    flex: none;
+  }
   .platform-name { font-size: 14px; }
   .platform-desc { font-size: 9px; }
+}
+
+/* Mobile fixes for platform bars */
+@media (max-width: 480px) {
+  .platform-bar-top .platform-btn-all {
+    width: 100%;
+    min-width: unset;
+    flex: 1;
+  }
 }
 
 @media (min-width: 600px) {
