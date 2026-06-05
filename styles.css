@@ -275,7 +275,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 /* ─── CATEGORIES ───────────────────────────────────────────── */
-.categories { padding: 64px 0; background: var(--white); }
+.categories { padding: 56px 0; background: var(--white); }
 
 .cat-grid {
   display: grid;
@@ -334,7 +334,7 @@ button { font-family: inherit; cursor: pointer; border: none; }
 }
 
 .platform-bar-top {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   justify-content: center;
 }
 
